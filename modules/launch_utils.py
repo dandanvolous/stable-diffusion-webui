@@ -321,7 +321,7 @@ def prepare_environment():
         if platform.system() == "Windows":
             if intel_oneapi.is_available():
                 torch_index_url = os.environ.get('TORCH_INDEX_URL', "https://pytorch-extension.intel.com/release-whl/stable/xpu/us/")
-                torch_command = os.environ.get('TORCH_COMMAND', f"pip install torch==2.0.1 torchvision==0.15.2 intel-extension-for-pytorch==2.0.110+gitba7f6c1 --extra-index-url {torch_index_url}")
+                torch_command = os.environ.get('TORCH_COMMAND', f"pip install torch==2.1.0a0 torchvision==0.16.0a0 intel-extension-for-pytorch==2.1.10 --extra-index-url {torch_index_url}")
             else:
                 # The "Nuullll/intel-extension-for-pytorch" wheels were built from IPEX source for Intel Arc GPU: https://github.com/intel/intel-extension-for-pytorch/tree/xpu-main
                 # This is NOT an Intel official release so please use it at your own risk!!
