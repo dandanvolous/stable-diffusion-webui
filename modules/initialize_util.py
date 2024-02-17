@@ -20,7 +20,8 @@ def fix_torch_version():
     import torch
 
     # Truncate version number of nightly/local build of PyTorch to not cause exceptions with CodeFormer or Safetensors
-    if ".dev" in torch.__version__ or "+git" in torch.__version__:
+    shit = [".dev", "+git", "a0"]
+    if any([x in torch.__version__ for x in shit]):
         torch.__long_version__ = torch.__version__
         torch.__version__ = re.search(r'[\d.]+[\d]', torch.__version__).group(0)
 
